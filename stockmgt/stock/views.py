@@ -6,7 +6,18 @@ from .forms import *
 
 
 def index(request):
-    return render(request, 'index.html')
+    import requests
+    switches = requests.get("https://uccitstock.herokuapp.com/switch").json()
+    accesspoints = requests.get("https://uccitstock.herokuapp.com/accesspoint").json()
+    powersupplies = requests.get("https://uccitstock.herokuapp.com/powersupply").json()
+
+    print(switches)
+
+    response={"switches":switches,
+              "accesspoints":accesspoints,
+              "powersupplies":powersupplies}
+
+    return render(request, 'index.html',{"response":response})
 
 
 def display_switch(request):
@@ -14,6 +25,7 @@ def display_switch(request):
 
 
 def display_Ap(request):
+
     items = Ap.objects.all()
     context = {
         'items': items,
@@ -21,7 +33,7 @@ def display_Ap(request):
 
     }
 
-    return render(request, 'index.html', context)
+    return render(request, 'display_ap.html')
 
 
 def display_PowerSupply(request):
@@ -32,7 +44,7 @@ def display_PowerSupply(request):
 
     }
 
-    return render(request, 'index.html', context)
+    return render(request, 'display_powersupply.html')
 
 def add_device(request, cls):
     if request.method =='POST':
