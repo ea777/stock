@@ -1,0 +1,19 @@
+{
+  "name": "productmanagement",
+  "version": "10.16.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ea777/stock.git"
+  },
+  "author": "eyob",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ea777/stock/issues"
+  },
+  "homepage": "https://github.com/ea777/stock#readme",
+  "description": ""
+}
