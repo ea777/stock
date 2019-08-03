@@ -10,9 +10,9 @@ def index(request):
     import requests
 
 
-    switches = requests.get("https://uccstockapp.herokuapp.com/switch").json()
-    accesspoints = requests.get("https://uccstockapp.herokuapp.com/accesspoint").json()
-    powersupplies = requests.get("https://uccstockapp.herokuapp.com/powersupply").json()
+    switches = requests.get("https://uccitstock.herokuapp.com/switch").json()
+    accesspoints = requests.get("https://uccitstock.herokuapp.com/accesspoint").json()
+    powersupplies = requests.get("https://uccitstock.herokuapp.com/powersupply").json()
 
     print(switches)
 
@@ -27,7 +27,7 @@ def display_switch(request):
 
     import requests
 
-    switches = requests.get("https://uccstockapp.herokuapp.com/switch").json()
+    switches = requests.get("https://uccitstock.herokuapp.com/switch").json()
 
     response = {"switches": switches}
 
