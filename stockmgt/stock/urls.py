@@ -14,6 +14,4 @@ urlpatterns = [
 
 
     path('display_switch', views.display_switch, name='display_switch'),
-    path('display_accesspoint', views.display_Ap, name='display_accesspoint'),
-    path('display_powersupply', views.display_PowerSupply, name='display_powersupply')
 	]
