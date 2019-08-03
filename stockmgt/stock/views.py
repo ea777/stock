@@ -27,7 +27,7 @@ def display_switch(request):
 
     import requests
 
-    switches = requests.get("https://uccstockapp.herokuapp.com/display_switch").json()
+    switches = requests.get("https://uccstockapp.herokuapp.com/switch").json()
 
     response = {"switches": switches}
 
