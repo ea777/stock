@@ -9,9 +9,7 @@ urlpatterns = [
 
     url(r'^$', views.index, name='index'),
 
-
-
-
-
     path('display_switch', views.display_switch, name='display_switch'),
+    path('display_ap', views.display_ap, name='display_ap'),
+    path('display_powersupply', views.display_powersupply, name='display_powersupply'),
 	]
