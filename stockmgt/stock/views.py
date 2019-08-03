@@ -32,3 +32,25 @@ def display_switch(request):
     response = {"switches": switches}
 
     return render(request, 'display_switch.html', {"response": response})
+
+
+def display_ap(request):
+
+    import requests
+
+    accesspoint = requests.get("https://uccitstock.herokuapp.com/accesspoints").json()
+
+    response = {"accesspoint": accesspoint}
+
+    return render(request, 'display_ap.html', {"response": response})
+
+
+def display_powersupply(request):
+
+    import requests
+
+    powersupply = requests.get("https://uccitstock.herokuapp.com/powersupply").json()
+
+    response = {"powersupply": powersupply}
+
+    return render(request, 'display_powersupply.html', {"response": response})
