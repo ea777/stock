@@ -3,6 +3,17 @@
 {%block content%}
 
     <h4>Switches</h4>
-    {{response.switches}}
+	
+	<div class="list-group">
+	  {% for switch in response.switches %}
+	  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+		  <h5 class="mb-1">{{ switch.type }}</h5>
+		  <small>{{ switch.status }}</small>
+		</div>
+		<p class="mb-1">{{ switch.issues }}</p>
+	  </a>
+	  {% endfor %}
+	</div>
 
 {% endblock %}
