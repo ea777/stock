@@ -2,18 +2,38 @@
 
 {%block content%}
 
-    <h4>Switches</h4>
-	
-	<div class="list-group">
-	  {% for switch in response.switches %}
-	  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-		<div class="d-flex w-100 justify-content-between">
-		  <h5 class="mb-1">{{ switch.type }}</h5>
-		  <small>{{ switch.status }}</small>
+    <h4 class="text-center">Switches</h4>
+	<br>
+	<div class="list-group" id="switches">
+		<div class="input-group input-group-lg">
+		  <div class="input-group-prepend">
+			<span class="input-group-text" id="inputGroup-sizing-lg">Search</span>
+		  </div>
+		  <input type="text" class="form-control search" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
 		</div>
-		<p class="mb-1">{{ switch.issues }}</p>
-	  </a>
-	  {% endfor %}
+		<br>
+		<div class="list">
+		  {% for switch in response.switches %}
+		  <!-- <li> -->
+			  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+				<div class="d-flex w-100 justify-content-between">
+				  <h5 class="mb-1 type">{{ switch.type }}</h5>
+				  <small class="status">{{ switch.status }}</small>
+				</div>
+				<p class="mb-1 issues">{{ switch.issues }}</p>
+			  </a>
+		  <!-- </li> -->
+		  {% endfor %}
+		</div>
 	</div>
+
+	
+	<script type="text/javascript">
+		var options = {
+		  valueNames: [ 'type', 'status', 'issues' ]
+		};
+
+		var switchList = new List('switches', options);
+	</script>
 
 {% endblock %}
