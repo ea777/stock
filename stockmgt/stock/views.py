@@ -34,11 +34,11 @@ def display_switch(request):
     return render(request, 'display_switch.html', {"response": response})
 
 
-def display_ap(request):
+def display_accesspoint(request):
 
     import requests
 
-    accesspoint = requests.get("https://uccitstock.herokuapp.com/accesspoints").json()
+    accesspoint = requests.get("https://uccitstock.herokuapp.com/accesspoint").json()
 
     response = {"accesspoint": accesspoint}
 
