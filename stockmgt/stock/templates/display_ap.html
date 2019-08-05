@@ -1,7 +1,39 @@
 {% extends 'base.html'%}
 
-{%block content%}
 
-  <h4>Access Points</h4>
-   {{response.accesspoint}}
+{%block content%}
+ <h4 class="text-center">Access Points</h4>
+	<br>
+	<div class="list-group" id="accesspoint">
+		<div class="input-group input-group-lg">
+		  <div class="input-group-prepend">
+			<span class="input-group-text" id="inputGroup-sizing-lg">Search</span>
+		  </div>
+		  <input type="text" class="form-control search" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+		</div>
+		<br>
+		<div class="list">
+		  {% for accesspoint in response.accesspoint %}
+		  <!-- <li> -->
+			  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+				<div class="d-flex w-100 justify-content-between">
+				  <h5 class="mb-1 type">{{ accesspoint.type }}</h5>
+				  <small class="status">{{ accesspoint.status }}</small>
+				</div>
+				<p class="mb-1 issues">{{ accesspoint.issues }}</p>
+			  </a>
+		  <!-- </li> -->
+		  {% endfor %}
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		var options = {
+		  valueNames: [ 'type', 'status', 'issues' ]
+		};
+
+		var accesspointList = new List('accesspoint', options);
+	</script>
+
 {% endblock %}
