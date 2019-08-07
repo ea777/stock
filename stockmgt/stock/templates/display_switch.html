@@ -15,7 +15,7 @@
 		<div class="list">
 		  {% for switch in response.switches %}
 		  <!-- <li> -->
-			  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+			  <a href="{% url 'edit_switch' id=switch.idswitch %}" class="list-group-item list-group-item-action flex-column align-items-start">
 				<div class="d-flex w-100 justify-content-between">
 				  <h5 class="mb-1 type">{{ switch.type }}</h5>
 				  <small class="status">{{ switch.status }}</small>
