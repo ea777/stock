@@ -54,3 +54,16 @@ def display_powersupply(request):
     response = {"powersupply": powersupply}
 
     return render(request, 'display_powersupply.html', {"response": response})
+
+def edit_switch(request, id):
+	import requests
+
+	switch_details = (requests.get("https://uccitstock.herokuapp.com/switch/"+str(id)).json())
+
+	response = {"switch_details": switch_details[0]}
+
+	return render(request, 'edit_switch.html', {"response": response})
+
+def delete_switch(request):
+
+    return render(request, 'delete_switch_complete.html')

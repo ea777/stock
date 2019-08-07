@@ -12,4 +12,6 @@ urlpatterns = [
     path('display_switch', views.display_switch, name='display_switch'),
     path('display_accesspoint', views.display_accesspoint, name='display_accesspoint'),
     path('display_powersupply', views.display_powersupply, name='display_powersupply'),
+    path('edit_switch/<int:id>', views.edit_switch, name='edit_switch'),
+    path('delete_switch', views.delete_switch, name='delete_switch'),
 	]
