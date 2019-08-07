@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="h-100 row align-items-center">
+      <div class="col">
+        <div class="alert alert-dark text-center">
+            <h2>Edit Item</h2>
+            <br>
+              <form method="post">
+                {% csrf_token %}
+                    <input type="text" name="item_id" class="form-control" placeholder="Item ID" value="{{ response.switch_details.idswitch }}"><br>
+                    <input type="text" name="type" class="form-control" placeholder="Type" value="{{ response.switch_details.type }}"><br>
+                    <input type="text" name="status" class="form-control" placeholder="Status" value="{{ response.switch_details.status }}"><br>
+                    <input type="text" name="issues" class="form-control" placeholder="Issues" value="{{ response.switch_details.issues }}"><br>
+                    <button class="btn btn-success" type="submit"><i class="fas fa-sign-in-alt"></i> Save Details</button>
+                    <button class="btn btn-danger" type="button" onclick="location.href='{% url 'delete_switch' %}'"><i class="fas fa-sync-alt"></i> Delete</button>
+              </form>
+            <br>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
