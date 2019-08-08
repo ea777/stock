@@ -15,7 +15,7 @@
 		<div class="list">
 		  {% for accesspoint in response.accesspoint %}
 		  <!-- <li> -->
-			  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+			<a href="{% url 'edit_accesspoint' id=accesspoint.idaccesspoints %}" class="list-group-item list-group-item-action flex-column align-items-start">
 				<div class="d-flex w-100 justify-content-between">
 				  <h5 class="mb-1 type">{{ accesspoint.type }}</h5>
 				  <small class="status">{{ accesspoint.status }}</small>
@@ -24,7 +24,9 @@
 			  </a>
 		  <!-- </li> -->
 		  {% endfor %}
+
 		</div>
+
 	</div>
 
 
