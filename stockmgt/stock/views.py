@@ -64,6 +64,30 @@ def edit_switch(request, id):
 
 	return render(request, 'edit_switch.html', {"response": response})
 
+def edit_accesspoint(request, id):
+
+ import requests
+
+ accesspoint_details = (requests.get("https://uccitstock.herokuapp.com/accesspoint/"+str(id)).json())
+
+ response = {"accesspoint_details": accesspoint_details[0]}
+
+ return render(request, 'edit_accesspoint.html', {"response": response})
+
+
+def edit_powersupply(request, id):
+
+ import requests
+
+ powersupply_details = (requests.get("https://uccitstock.herokuapp.com/powersupply/"+str(id)).json())
+
+ response = {"powersupply_details": powersupply_details[0]}
+
+ return render(request, 'edit_powersupply.html', {"response": response})
+
+
+
+
 def delete_switch(request):
 
     return render(request, 'delete_switch_complete.html')
