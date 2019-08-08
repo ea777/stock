@@ -15,6 +15,7 @@
 		<div class="list">
 		  {% for powersupply in response.powersupply %}
 		  <!-- <li> -->
+			<a href="{% url 'edit_powersupply' id=powersupply.idpowersupply %}" class="list-group-item list-group-item-action flex-column align-items-start">
 			  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
 				<div class="d-flex w-100 justify-content-between">
 				  <h5 class="mb-1 type">{{ powersupply.type }}</h5>
