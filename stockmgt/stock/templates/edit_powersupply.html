@@ -14,7 +14,7 @@
                     <input type="text" name="status" class="form-control" placeholder="Status" value="{{ response.powersupply_details.status }}"><br>
                     <input type="text" name="issues" class="form-control" placeholder="Issues" value="{{ response.powersupply_details.issues }}"><br>
                     <button class="btn btn-success" type="submit"><i class="fas fa-sign-in-alt"></i> Save Details</button>
-                    <button class="btn btn-danger" type="button" onclick="location.href='{% url 'delete_switch' %}'"><i class="fas fa-sync-alt"></i> Delete</button>
+                    <button class="btn btn-danger" type="button" onclick="location.href='{% url 'delete_powersupply' id=response.powersupply_details.idpowersupply %}'"><i class="fas fa-sync-alt"></i> Delete</button>
               </form>
             <br>
         </div>

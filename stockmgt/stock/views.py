@@ -88,6 +88,34 @@ def edit_powersupply(request, id):
 
 
 
-def delete_switch(request):
+def delete_switch(request, id):
+
+    import requests
+
+    response = (requests.get("https://uccitstock.herokuapp.com/delete_switch/" + str(id)).json())
+
+    print(response)
 
     return render(request, 'delete_switch_complete.html')
+
+
+def delete_accesspoint(request, id):
+
+    import requests
+
+    response = (requests.get("https://uccitstock.herokuapp.com/delete_accesspoint/" + str(id)).json())
+
+    print(response)
+
+    return render(request, 'delete_accesspoint_complete.html')
+
+
+def delete_powersupply(request, id):
+
+    import requests
+
+    response = (requests.get("https://uccitstock.herokuapp.com/delete_powersupply/" + str(id)).json())
+
+    print(response)
+
+    return render(request, 'delete_powersupply_complete.html')
