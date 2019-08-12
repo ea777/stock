@@ -1,2 +1,25 @@
 {% extends 'base.html'%}
 
+{% block content %}
+
+
+
+<html>
+<body>
+
+<button onclick="display()">Display Switch List</button>
+
+<script>
+  function display() {
+  location.replace("http://127.0.0.1:8000/display_switch")
+}
+
+function showHome() {
+  location.replace("http://127.0.0.1:8000/")
+}
+</script>
+</body>
+
+
+
+{% endblock %}
