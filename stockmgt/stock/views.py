@@ -54,6 +54,30 @@ def display_powersupply(request):
 
     return render(request, 'display_powersupply.html', {"response": response})
 
+
+def add_switch(request):
+
+    import requests
+
+    if request.method == "POST":
+
+        type = request.POST.get('type', '')
+        model = request.POST.get('model', '')
+        status = request.POST.get('status', '')
+        issues = request.POST.get('issues', '')
+
+        requests.post("https://uccitstock.herokuapp.com/add_switch/",
+                            data={'type': type,
+                           'model': model,
+                           'status': status,
+                           'issues': issues}).json()
+
+        return render(request, 'add_switch_complete.html')
+    else:
+
+        return render(request, 'add_switch.html')
+
+
 def edit_switch(request, id):
 
     import requests

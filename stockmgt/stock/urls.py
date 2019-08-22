@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
 
     path('display_switch', views.display_switch, name='display_switch'),
+    path('add_switch', views.add_switch, name='add_switch'),
     path('display_accesspoint', views.display_accesspoint, name='display_accesspoint'),
     path('display_powersupply', views.display_powersupply, name='display_powersupply'),
     path('edit_switch/<int:id>', views.edit_switch, name='edit_switch'),

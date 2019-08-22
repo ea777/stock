@@ -3,7 +3,11 @@
 {%block content%}
 
     <h4 class="text-center">Switches</h4>
+
 	<br>
+
+
+
 	<div class="list-group" id="switches">
 		<div class="input-group input-group-lg">
 		  <div class="input-group-prepend">
@@ -13,6 +17,15 @@
 		</div>
 		<br>
 		<div class="list">
+
+		  <!-- <li> -->
+			  <a href="{% url 'add_switch' %}" class=" list-group-item list-group-item-action flex-column align-items-start text-center list-group-item-success" >
+               Add Switch
+			  </a>
+		  <!-- </li> -->
+
+
+
 		  {% for switch in response.switches %}
 		  <!-- <li> -->
 			  <a href="{% url 'edit_switch' id=switch.idswitch %}" class="list-group-item list-group-item-action flex-column align-items-start">
