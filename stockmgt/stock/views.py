@@ -9,7 +9,6 @@ def index(request):
 
     import requests
 
-
     switches = requests.get("https://uccitstock.herokuapp.com/switch").json()
     accesspoints = requests.get("https://uccitstock.herokuapp.com/accesspoint").json()
     powersupplies = requests.get("https://uccitstock.herokuapp.com/powersupply").json()
@@ -61,16 +60,21 @@ def edit_switch(request, id):
 
     if request.method == "POST":
 
-        print(request.POST.get('item_id', ''))
-        print(request.POST.get('type', ''))
-        print(request.POST.get('model', ''))
-        print(request.POST.get('issues', ''))
+        type = request.POST.get('type', '')
+        model = request.POST.get('model', '')
+        status = request.POST.get('status', '')
+        issues = request.POST.get('issues', '')
 
-        requests.put("https://uccitstock.herokuapp.com/update_switch/" + str(id)).json()
+        requests.put("https://uccitstock.herokuapp.com/update_switch/" + str(id),
+                     data={'type': type,
+                           'model': model,
+                           'status': status,
+                           'issues': issues}).json()
+
         return render(request, 'update_complete_switch.html')
     else:
 
-        switch_details = (requests.put("https://uccitstock.herokuapp.com/switch/"+str(id)).json())
+        switch_details = (requests.get("https://uccitstock.herokuapp.com/switch/"+str(id)).json())
 
         response = {"switch_details": switch_details[0]}
 
@@ -96,8 +100,6 @@ def edit_powersupply(request, id):
  response = {"powersupply_details": powersupply_details[0]}
 
  return render(request, 'edit_powersupply.html', {"response": response})
-
-
 
 
 def delete_switch(request, id):
@@ -132,7 +134,4 @@ def delete_powersupply(request, id):
 
     return render(request, 'delete_powersupply_complete.html')
 
-def update_switch(request, id):
-
-    import requests
 
