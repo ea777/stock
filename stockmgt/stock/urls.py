@@ -18,5 +18,6 @@ urlpatterns = [
     path('delete_switch_complete/<int:id>', views.delete_switch, name='delete_switch'),
     path('delete_accesspoint_complete/<int:id>', views.delete_accesspoint, name='delete_accesspoint'),
     path('delete_powersupply_complete/<int:id>', views.delete_powersupply, name='delete_powersupply'),
+    path('update_switch_complete/<int:id>', views.update_switch, name='update_switch'),
 
 ]
